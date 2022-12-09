@@ -1,0 +1,15 @@
+/home/tecno.mossen/alumnat/lilly/act6/ap1/bin/Debug/net6.0/ap1
+/home/tecno.mossen/alumnat/lilly/act6/ap1/bin/Debug/net6.0/ap1.deps.json
+/home/tecno.mossen/alumnat/lilly/act6/ap1/bin/Debug/net6.0/ap1.runtimeconfig.json
+/home/tecno.mossen/alumnat/lilly/act6/ap1/bin/Debug/net6.0/ap1.dll
+/home/tecno.mossen/alumnat/lilly/act6/ap1/bin/Debug/net6.0/ap1.pdb
+/home/tecno.mossen/alumnat/lilly/act6/ap1/obj/Debug/net6.0/ap1.csproj.AssemblyReference.cache
+/home/tecno.mossen/alumnat/lilly/act6/ap1/obj/Debug/net6.0/ap1.GeneratedMSBuildEditorConfig.editorconfig
+/home/tecno.mossen/alumnat/lilly/act6/ap1/obj/Debug/net6.0/ap1.AssemblyInfoInputs.cache
+/home/tecno.mossen/alumnat/lilly/act6/ap1/obj/Debug/net6.0/ap1.AssemblyInfo.cs
+/home/tecno.mossen/alumnat/lilly/act6/ap1/obj/Debug/net6.0/ap1.csproj.CoreCompileInputs.cache
+/home/tecno.mossen/alumnat/lilly/act6/ap1/obj/Debug/net6.0/ap1.dll
+/home/tecno.mossen/alumnat/lilly/act6/ap1/obj/Debug/net6.0/refint/ap1.dll
+/home/tecno.mossen/alumnat/lilly/act6/ap1/obj/Debug/net6.0/ap1.pdb
+/home/tecno.mossen/alumnat/lilly/act6/ap1/obj/Debug/net6.0/ap1.genruntimeconfig.cache
+/home/tecno.mossen/alumnat/lilly/act6/ap1/obj/Debug/net6.0/ref/ap1.dll
