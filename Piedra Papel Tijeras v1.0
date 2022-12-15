@@ -1,0 +1,97 @@
+bool partida, creditos;
+int contador = 0;
+int contadorIA = 0;
+
+
+System.Console.WriteLine("Seleccione el modo de juego:");
+System.Console.WriteLine("1. Jugar");
+System.Console.WriteLine("2. Créditos");
+
+
+bool juego = false;
+creditos = false;
+Random rnd = new Random();
+
+
+string input = Console.ReadLine().ToLower();
+
+if (input == "1" || input == "jugar")
+{
+
+    juego = true;
+
+}
+else if (input == "2" || input == "créditos" || input == "creditos")
+{
+
+    creditos = true;
+}
+else
+{
+
+    System.Console.WriteLine("Has introducido una opción no válida. Inténtelo de nuevo.");
+}
+
+if (juego)
+{
+    System.Console.WriteLine("Va a jugar contra una máquina? [Y/N]");
+    if (Console.ReadLine().ToLower() != "y")
+    {
+
+        System.Console.WriteLine("Esa opción aún no está disponible. ");
+
+    }
+    else
+    {
+
+        while (contador < 5 || contadorIA < 5)
+        {
+
+            System.Console.WriteLine("Elige tu movimiento:\n1. Piedra\n2. Papel\n3. Tijeras");
+
+            int num = rnd.Next(1, 4);
+
+            int ficha = int.Parse(Console.ReadLine());
+
+            if ((ficha == 1 && num == 1) || (ficha == 2 && num == 2) || (ficha == 3 && num == 3))
+            {
+
+                System.Console.WriteLine("Ha habido un empate.\n\n");
+                //empate
+            }
+            else if ((ficha == 1 && num == 2) || (ficha == 2 && num == 3) || (ficha == 3 && num == 1))
+            {
+
+                //gana IA
+                System.Console.WriteLine("Ha ganado la IA.\n\n");
+                contadorIA++;
+
+            }
+            else
+            {
+
+                System.Console.WriteLine("¡Has ganado!\n\n");
+                //ganas tú
+                contador++;
+            }
+
+        }
+        if (contador == 5)
+        {
+
+            System.Console.WriteLine("Has ganado la partida, ¡enhorabuena!\n\n");
+        }
+        else
+        {
+
+            System.Console.WriteLine("Has perdido...\n\n");
+        }
+    }
+}
+else
+{
+
+    System.Console.WriteLine("Programador/a: Li\nDesarrollador/a: Li\nDiseño Artístico: Li\n");
+    return;
+}
+
