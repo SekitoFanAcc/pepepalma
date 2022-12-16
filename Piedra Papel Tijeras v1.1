@@ -1,0 +1,174 @@
+bool partida, creditos;
+int contador = 0;
+int contadorIA = 0;
+bool local = false;
+
+
+System.Console.WriteLine("Seleccione el modo de juego:");
+System.Console.WriteLine("1. Jugar");
+System.Console.WriteLine("2. Créditos");
+
+
+bool juego = false;
+creditos = false;
+Random rnd = new Random();
+
+
+string input = Console.ReadLine().ToLower();
+
+if (input == "1" || input == "jugar")
+{
+
+    juego = true;
+
+}
+else if (input == "2" || input == "créditos" || input == "creditos")
+{
+
+    creditos = true;
+}
+else
+{
+
+    System.Console.WriteLine("Has introducido una opción no válida. Inténtelo de nuevo.");
+}
+
+if (juego)
+{
+    System.Console.WriteLine("Va a jugar contra una máquina? [Y/N]");
+    if (Console.ReadLine().ToLower() != "y")
+    {
+        local = true;
+        int contador1 = 0;
+        int contador2 = 0;
+        int ficha1 = 0, ficha2 = 0;
+        System.Console.WriteLine("Has seleccionado jugar de manera local. ");
+        while (local)
+        {
+            System.Console.WriteLine("Jugador 1. Elige tu movimiento. ");
+            ficha1 = int.Parse(Console.ReadLine());
+            System.Console.WriteLine("Jugador 2. ELige tu movimiento");
+            ficha2 = int.Parse(Console.ReadLine());
+
+            if (perderPrimero(ficha1, ficha2))
+            {
+
+                System.Console.WriteLine("El jugador 1 gana.\n\n");
+
+                contador1++;
+            }
+            else if (perderPrimero(ficha2, ficha1))
+            {
+                System.Console.WriteLine("El jugador 2. gana.\n\n");
+
+                contador2++;
+            }
+            else if (empatar(ficha1, ficha2))
+            {
+
+                System.Console.WriteLine("Empate.\n\n");
+            }
+
+            if (contador1 == 5)
+            {
+
+                System.Console.WriteLine("¡Ha ganado el jugador 1!\n");
+
+                return;
+            }
+            else if (contador2 == 5)
+            {
+
+                System.Console.WriteLine("¡Ha ganado el jugador 2!\n");
+                return;
+            }
+        }
+
+
+    }
+    else
+    {
+
+        while (contador < 5 || contadorIA < 5)
+        {
+
+            System.Console.WriteLine("Elige tu movimiento:\n1. Piedra\n2. Papel\n3. Tijeras");
+
+            int num = rnd.Next(1, 4);
+
+            int ficha = int.Parse(Console.ReadLine());
+
+            if (empatar(ficha, num))
+            {
+
+                System.Console.WriteLine("Ha habido un empate.\n\n");
+                //empate
+            }
+            else if (perderPrimero(ficha, num))
+            {
+
+                //gana IA
+                System.Console.WriteLine("Ha ganado la IA.\n\n");
+                contadorIA++;
+
+            }
+            else
+            {
+
+                System.Console.WriteLine("¡Has ganado!\n\n");
+                //ganas tú
+                contador++;
+            }
+
+        }
+        if (contador == 5)
+        {
+
+            System.Console.WriteLine("Has ganado la partida, ¡enhorabuena!\n\n");
+        }
+        else
+        {
+
+            System.Console.WriteLine("Has perdido...\n\n");
+        }
+    }
+}
+else
+{
+
+    System.Console.WriteLine("Programador/a: Li\nDesarrollador/a: Li\nDiseño Artístico: Li\n");
+    return;
+}
+
+bool empatar(int fx1, int fx2)
+{
+
+    if ((fx1 == 1 && fx2 == 1) || (fx1 == 2 && fx2 == 2) || (fx1 == 3 && fx2 == 3))
+    {
+
+        return true;
+    }
+    else
+    {
+
+        return false;
+    }
+    int ficha1 = 0, ficha2 = 0;
+
+}
+
+bool perderPrimero(int fx1, int fx2)
+{
+
+    if ((fx1 == 1 && fx2 == 2) || (fx1 == 2 && fx2 == 3) || (fx1 == 3 && fx2 == 1))
+    {
+        return true;
+
+    }
+    else
+    {
+
+        return false;
+    }
+}
+
